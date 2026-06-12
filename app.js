@@ -1,5 +1,5 @@
 // OpenWeatherMap API - 获取免费 API Key：https://openweathermap.org/api
-const API_KEY = 'YOUR_API_KEY_HERE'; // ⚠️ 需要替换为你的 API Key
+const API_KEY = '2104c04d9d9ec5169daf652709a3ef5e'; // ⚠️ 需要替换为你的 API Key
 const API_BASE_URL = 'https://api.openweathermap.org/data/2.5';
 
 // DOM 元素
