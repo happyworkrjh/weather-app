@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌤️ 天气应用</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌤️ 天气预报应用</h1>
+            <p class="subtitle">查询全球天气信息</p>
+        </header>
+
+        <!-- 搜索框 -->
+        <div class="search-section">
+            <div class="search-box">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="输入城市名称... 例如：北京、伦敦、纽约"
+                    class="search-input"
+                >
+                <button id="searchBtn" class="search-btn">🔍 搜索</button>
+            </div>
+
+            <!-- 控制按钮 -->
+            <div class="controls">
+                <button id="geoBtn" class="btn-secondary">📍 当前位置</button>
+                <select id="unitSelect" class="unit-select">
+                    <option value="metric">°C (摄氏度)</option>
+                    <option value="imperial">°F (华氏度)</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- 错误提示 -->
+        <div id="errorMsg" class="error-message"></div>
+
+        <!-- 当前天气 -->
+        <div id="currentWeather" class="weather-card hidden">
+            <div class="city-info">
+                <h2 id="cityName">城市名称</h2>
+                <p id="weatherDesc" class="weather-desc">天气描述</p>
+            </div>
+            <div class="temp-display">
+                <div class="temperature" id="temp">--</div>
+                <div class="weather-icon" id="weatherIcon">🌤️</div>
+            </div>
+            <div class="weather-details">
+                <div class="detail-item">
+                    <span class="label">体感温度</span>
+                    <span id="feelsLike" class="value">--</span>
+                </div>
+                <div class="detail-item">
+                    <span class="label">湿度</span>
+                    <span id="humidity" class="value">--%</span>
+                </div>
+                <div class="detail-item">
+                    <span class="label">风速</span>
+                    <span id="windSpeed" class="value">-- m/s</span>
+                </div>
+                <div class="detail-item">
+                    <span class="label">气压</span>
+                    <span id="pressure" class="value">-- hPa</span>
+                </div>
+            </div>
+            <button id="saveBtn" class="btn-save">⭐ 收藏城市</button>
+        </div>
+
+        <!-- 预报 -->
+        <div id="forecastSection" class="forecast-section hidden">
+            <h3>📅 5天天气预报</h3>
+            <div id="forecastContainer" class="forecast-container"></div>
+        </div>
+
+        <!-- 收藏的城市 -->
+        <div id="favoritesSection" class="favorites-section hidden">
+            <h3>⭐ 收藏的城市</h3>
+            <div id="favoritesList" class="favorites-list"></div>
+        </div>
+
+        <!-- 加载动画 -->
+        <div id="loadingSpinner" class="loading-spinner hidden">
+            <div class="spinner"></div>
+            <p>加载中...</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
